@@ -1,16 +1,6 @@
 version: "2"
 
 services:
-  orgpa-website:
-    image: orgpa-website:latest
-    restart: always
-    links:
-      - orgpa-database-api
-    volumes:
-      - ./src/orgpa:/Orgpa/src/orgpa
-    ports:
-      - 80:80
-
   orgpa-database-api:
     image: orgpa-database-api:latest
     restart: always
