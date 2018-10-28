@@ -1,6 +1,16 @@
 version: "2"
 
 services:
+  orgpa-frontend:
+    image: orgpa-frontend:latest
+    restart: always
+    links:
+      - orgpa-database-api
+    volumes:
+      - ./src/orgpa-frontend:/Orgpa/src/orgpa-frontend
+    ports:
+      - 80:80
+
   orgpa-database-api:
     image: orgpa-database-api:latest
     restart: always
