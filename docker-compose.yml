@@ -9,7 +9,7 @@ services:
     volumes:
       - ./src/orgpa-frontend:/Orgpa/src/orgpa-frontend
     ports:
-      - 80:80
+      - 8080:8080
 
   orgpa-database-api:
     image: orgpa-database-api:latest
