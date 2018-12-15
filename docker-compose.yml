@@ -20,6 +20,12 @@ services:
       - ./src/orgpa-database-api:/Orgpa/src/orgpa-database-api
     ports:
       - 8000:8000
+    environment:
+      ORGPA_DATABASE_TYPE: mysql
+      ORGPA_DATABASE_CONNECTION: 172.17.0.1:3306
+      ORGPA_ENDPOINT_API: 0.0.0.0:8000
+      ORGPA_DATABASE_PASSWORD_MYSQL: test
+      ORGPA_DATABASE_NAME: orgpa_user_api
 
   mongo-db:
     image: mongo:4.0.3
