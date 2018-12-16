@@ -15,7 +15,7 @@ services:
     image: orgpa-database-api:latest
     restart: always
     links:
-      - mongo-db
+      - db
     volumes:
       - ./src/orgpa-database-api:/Orgpa/src/orgpa-database-api
     ports:
@@ -26,16 +26,6 @@ services:
       ORGPA_ENDPOINT_API: 0.0.0.0:8000
       ORGPA_DATABASE_PASSWORD_MYSQL: test
       ORGPA_DATABASE_NAME: orgpa_user_api
-
-  mongo-db:
-    image: mongo:4.0.3
-    restart: always
-    volumes:
-      - ./volumes/mongo/:/data/db
-    environment:
-      - MONGO_DATA_DIR=/data/db
-    ports:
-      - 27017:27017
 
   db:
     image: mysql:5.7
