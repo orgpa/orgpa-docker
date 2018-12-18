@@ -10,6 +10,9 @@ services:
       - ./src/orgpa-frontend:/Orgpa/src/orgpa-frontend
     ports:
       - 80:8080
+    environment:
+      ORGPA_ENDPOINT: 0.0.0.0:8080
+      ORGPA_URL_DATABASE_API: http://172.17.0.1:8000
 
   orgpa-database-api:
     image: orgpa-database-api:latest
