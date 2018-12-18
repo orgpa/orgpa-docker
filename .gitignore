@@ -2,3 +2,4 @@ src/
 volumes/
 pkg/
 frontend/
+.cache
